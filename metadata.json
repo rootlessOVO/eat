@@ -1,0 +1,6 @@
+{
+  "name": "一味独食 · 一人食中式长期饮食与厨房指南",
+  "description": "专为独居一人食打造的中式三餐长期规划、现有厨具调料最大化利用方案、阶梯式添置清单与今日早餐实操助手。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
