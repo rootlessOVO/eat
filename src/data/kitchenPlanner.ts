@@ -24,7 +24,7 @@ export interface CookingStep {
   parallelTip?: string;
 }
 
-export type StapleCategory = 'rice' | 'noodles' | 'congee' | 'toast_other';
+export type StapleCategory = 'rice' | 'fried_rice' | 'noodles' | 'congee' | 'toast_other';
 
 export interface Recipe {
   id: string;
@@ -185,14 +185,14 @@ export const INITIAL_KITCHEN_ITEMS: KitchenItem[] = [
   },
   {
     id: 'mini_rice_cooker',
-    name: '迷你电饭煲 (1.5L–2L) + 小袋大米',
+    name: '迷你电饭煲 (1.5L–2L) + 小袋大米 & 黄小米',
     category: 'tool',
     priority: 'tier1_must',
     owned: false,
     estimatedPrice: 119,
-    spec: '带煮粥/预约功能 · 1-2人容量 + 1kg–2.5kg大米',
-    reason: '完美匹配你「中午吃米饭、晚上喝粥」的习惯！中午焖2份饭（1份中午盖饭，1份晚上10分钟改造成生滚咸粥）。',
-    usageTip: '没买电饭煲前，今天中午买袋大米，先用炒锅加盖焖饭/煮粥，同样软糯香甜。'
+    spec: '带煮粥/预约功能 · 1-2人容量 + 大米/黄小米各1小袋',
+    reason: '完美匹配你「中午吃米饭、晚上吃炒饭或小米粥+炒菜」的习惯！中午焖2份饭（1份中午吃，1份冷藏留晚上做蛋炒饭）。',
+    usageTip: '没买电饭煲前，今天中午买小袋大米和黄小米，用炒锅加盖15分钟即可熬出金黄米油的小米粥。'
   },
   {
     id: 'air_fryer_paper',
@@ -202,7 +202,7 @@ export const INITIAL_KITCHEN_ITEMS: KitchenItem[] = [
     owned: false,
     estimatedPrice: 19,
     spec: '免洗纸盘 + 雾化控油壶',
-    reason: '一人做饭最怕洗锅！用纸盘烤脆豆腐、烤薄皮椒配白粥不用刷炸篮。',
+    reason: '一人做饭最怕洗锅！用纸盘烤脆豆腐、烤薄皮椒配小米粥不用刷炸篮。',
     usageTip: '注意先放食材压住硅油纸再开机，避免空转卷入加热管。'
   },
   {
@@ -213,8 +213,8 @@ export const INITIAL_KITCHEN_ITEMS: KitchenItem[] = [
     owned: false,
     estimatedPrice: 38,
     spec: '小瓶菜籽油/花生油(900ml) + 淀粉(已买) + 薄盐蚝油(已买)',
-    reason: '盒马已买齐玉米淀粉和薄盐蚝油！中午只需再补一瓶小包装菜籽油或花生油即可。',
-    usageTip: '肉片加生抽+蚝油+淀粉抓匀，无论炒盖饭浇头还是下滚粥都滑嫩不柴。'
+    reason: '盒马已买齐玉米淀粉和薄盐蚝油！中午只需再补一瓶小包装菜籽油或花生油，猛火蛋炒饭和小炒青菜最出锅气。',
+    usageTip: '肉片/肉丁加生抽+蚝油+淀粉抓匀，炒饭或快炒都滑嫩不柴。'
   },
 
   // Tier 2 Upgrade Tools (Storage & Efficiency)
@@ -225,8 +225,8 @@ export const INITIAL_KITCHEN_ITEMS: KitchenItem[] = [
     priority: 'tier2_upgrade',
     owned: false,
     estimatedPrice: 32,
-    spec: '放入炒锅秒变蒸锅 + 冷冻米饭/备菜盒',
-    reason: '多焖出来的米饭装保鲜盒冷冻/冷藏，晚上倒进炒锅加开水5分钟就能熬成浓稠生滚粥！',
+    spec: '放入炒锅秒变蒸锅 + 炒饭冷饭/备菜分装盒',
+    reason: '中午多焖出来的1份米饭敞开晾凉装保鲜盒放冷藏，晚上拿出来粒粒干爽，做炒饭绝不粘锅！',
     usageTip: '中午买回的肉切好按130g–150g一盒平铺冷冻，做饭时随取随炒。'
   },
   {
@@ -237,21 +237,21 @@ export const INITIAL_KITCHEN_ITEMS: KitchenItem[] = [
     owned: false,
     estimatedPrice: 25,
     spec: '盒马葱姜蒜组合(已买300g) + 纯芝麻香油',
-    reason: '葱姜蒜已就位！姜丝是晚上煮肉片粥去腥暖胃的灵魂，蒜末是中午蚝油油麦菜的核心。',
-    usageTip: '大葱切段、生姜切丝分装冷冻，煮面熬粥随手抓一把直接下锅。'
+    reason: '葱姜蒜已就位！大葱花是晚间蛋炒饭的灵魂，蒜末是小米粥配菜「蒜蓉蚝油油麦菜」的核心。',
+    usageTip: '大葱切葱花、生姜切丝分装冷冻，炒饭煮面随手抓一把直接下锅。'
   },
 
   // Tier 3 Core Solo Ingredients (Must-Stock Fridge & Dry Goods)
   {
     id: 'eggs_bread_noodles',
-    name: '鸡蛋(20枚) + 龙须挂面(2袋) + 鲜奶吐司 + 大米',
+    name: '鸡蛋(20枚) + 龙须挂面(2袋) + 鲜奶吐司 + 大米/黄小米',
     category: 'staple',
     priority: 'tier3_pantry',
     owned: false,
     estimatedPrice: 36,
-    spec: '盒马已买齐蛋/面/吐司 · 中午顺手补1小袋大米',
-    reason: '支撑你「早饭蛋面/吐司、午饭米饭/拌面、晚饭汤面/咸粥」的碳水与基础蛋白矩阵。',
-    usageTip: '龙须挂面极细，水沸下锅90秒即熟，千万别煮久！'
+    spec: '盒马已买齐蛋/面/吐司 · 中午顺手补小袋大米与黄小米',
+    reason: '支撑你「早饭蛋面/吐司、午饭米饭/面条、晚饭炒饭/汤面/小米粥+炒菜」的完整主食矩阵。',
+    usageTip: '黄小米水开下锅中火煮15分钟即可熬出金黄米油，养胃又省事！'
   },
   {
     id: 'tofu_chicken_greens',
@@ -675,12 +675,271 @@ export const SOLO_RECIPES: Recipe[] = [
   },
 
   // ============================================================================
-  // === DINNER RECIPES (晚上：3款暖胃清汤面 + 3款生滚咸粥/配菜) ===
+  // === DINNER RECIPES (晚上：3款猛火炒饭 + 3款简单小米粥配小炒 + 3款暖胃汤面) ===
   // ============================================================================
+  {
+    id: 'dinner_fried_rice_golden_egg',
+    title: '【晚间炒饭】锅边酱油辣椒酱黄金葱花蛋炒饭 + 小白菜清汤',
+    subtitle: '把中午多焖的1碗冷饭变废为宝 · 燃气灶+炒锅5分钟爆出街头大排档锅气',
+    slot: 'dinner',
+    stapleType: 'fried_rice',
+    prepMinutes: 2,
+    cookMinutes: 5,
+    calories: 510,
+    proteinGrams: 21,
+    imageUrl: '/src/assets/images/wok_stir_fry_lunch_1793918768775.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'chili_sauce', 'pepper', 'salt'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '灵魂炒饭公式：谷物蛋2枚 + 大葱花1大把 + 锅边生抽1.5勺 + 辣椒酱半勺 + 胡椒粉',
+    soloPortionNote: '中午焖饭时多焖1碗，摊平放冰箱冷藏下午收干表面水分；晚上用燃气灶大火快炒，粒粒金黄分明、绝不粘锅！',
+    steps: [
+      {
+        id: 'd_fr1_1',
+        phase: 'prep',
+        deviceLabel: '备饭窍门',
+        title: '冷米饭抓散（或拌入1颗蛋黄），切足量大葱花',
+        detail: '取出中午预留冷藏的1碗米饭，用勺背或手捏散结块；盒马大码谷物蛋2枚打散，大葱切1大把葱花。',
+        durationSeconds: 90
+      },
+      {
+        id: 'd_fr1_2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '热锅滑散鸡蛋，倒入米饭大火翻炒至粒粒跳舞',
+        detail: '炒锅烧热下1勺油，倒入蛋液快速搅成蓬松碎蛋花，立刻倒入冷米饭，开大火用铲背边压边翻炒2分钟至米粒干爽弹跳。',
+        durationSeconds: 150
+      },
+      {
+        id: 'd_fr1_3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '沿锅边淋入生抽激出焦香，撒大把葱花与辣椒酱出锅',
+        detail: '沿着滚烫的锅边淋入1.5勺生抽（瞬间冒起酱香白烟），加半勺辣椒酱、少许白胡椒粉和1大把葱花翻炒20秒盛出！锅底不用洗直接冲碗开水烫几片小白菜做配汤。',
+        durationSeconds: 60
+      }
+    ]
+  },
+  {
+    id: 'dinner_fried_rice_pepper_chicken',
+    title: '【晚间炒饭】薄皮椒蚝油滑鸡腿丁/肉丁猛火酱油炒饭',
+    subtitle: '有肉有菜有蛋一盘端 · 玉米淀粉锁住鸡丁肉汁 · 薄皮椒清脆解腻',
+    slot: 'dinner',
+    stapleType: 'fried_rice',
+    prepMinutes: 4,
+    cookMinutes: 6,
+    calories: 560,
+    proteinGrams: 34,
+    imageUrl: '/src/assets/images/wok_stir_fry_lunch_1793918768775.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'chili_sauce', 'pepper', 'salt'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '招牌肉丁炒饭味型：淀粉嫩肉丁 + 薄皮椒碎 + 生抽1.5勺 + 薄盐蚝油1勺 + 蒜末',
+    soloPortionNote: '把盒马买的薄皮椒切小丁炒进饭里，微辣清香完全不腻，连配菜都省了，吃完只洗一个盘子！',
+    steps: [
+      {
+        id: 'd_fr2_1',
+        phase: 'prep',
+        deviceLabel: '菜刀切配',
+        title: '鸡腿肉/猪肉切1cm小丁加淀粉抓嫩，薄皮椒2根切小丁',
+        detail: '肉100g切小丁，加半勺生抽、半小勺玉米淀粉、胡椒粉抓匀；薄皮椒2根去籽切小方丁，切葱蒜末。',
+        durationSeconds: 150
+      },
+      {
+        id: 'd_fr2_2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '先滑炒肉丁与鸡蛋，下薄皮椒丁炒出虎皮清香',
+        detail: '炒锅下1勺油，先下肉丁大火滑炒90秒至变色焦香，推到锅边打入1颗鸡蛋炒散，再倒入薄皮椒丁和蒜末大火翻炒45秒。',
+        durationSeconds: 150
+      },
+      {
+        id: 'd_fr2_3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '倒入冷米饭，淋入生抽与薄盐蚝油猛火炒匀',
+        detail: '倒入1碗米饭大火翻炒，沿锅边淋1勺生抽、挤1勺薄盐蚝油，翻炒至每粒米裹满酱色与椒香即可装盘。',
+        durationSeconds: 90
+      }
+    ]
+  },
+  {
+    id: 'dinner_fried_rice_tofu_greens',
+    title: '【晚间炒饭】少油减脂版：黄金老豆腐碎 + 油麦菜鸡蛋炒饭',
+    subtitle: '半盒老豆腐捏碎炒成焦香“素肉末” · 半饭半豆腐热量直降150大卡',
+    slot: 'dinner',
+    stapleType: 'fried_rice',
+    prepMinutes: 3,
+    cookMinutes: 7,
+    calories: 420,
+    proteinGrams: 26,
+    imageUrl: '/src/assets/images/wok_stir_fry_lunch_1793918768775.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'pepper', 'chili_sauce', 'salt'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '焦香豆腐炒饭：老豆腐捏碎干煸 + 生抽1.5勺 + 薄盐蚝油半勺 + 黑胡椒粉 + 油麦菜脆丁',
+    soloPortionNote: '晚上想吃香喷喷的炒饭又怕碳水超标？用半盒盒马老豆腐捏碎代替一半米饭，炒干水分后口感神似肉末炒饭！',
+    steps: [
+      {
+        id: 'd_fr3_1',
+        phase: 'prep',
+        deviceLabel: '切配准备',
+        title: '半盒老豆腐(190g)用手抓捏成碎粒，油麦菜切1cm小碎丁',
+        detail: '老豆腐沥干水分直接用手捏成米粒大小的碎渣；油麦菜取150g（尤其是脆嫩菜梗）切小碎丁。',
+        durationSeconds: 120
+      },
+      {
+        id: 'd_fr3_2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '炒锅少油先将老豆腐碎煸炒3分钟至金黄干香，下蛋液同炒',
+        detail: '炒锅倒半勺油，下豆腐碎中大火翻炒3分钟逼出水分至表面金黄微焦（像肉燥一样香），倒入1颗蛋液炒散。',
+        durationSeconds: 210
+      },
+      {
+        id: 'd_fr3_3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '加入小半碗米饭与油麦菜碎，淋生抽蚝油胡椒粉大火出锅',
+        detail: '倒入小半碗米饭翻炒1分钟，最后撒入油麦菜脆丁、1.5勺生抽、半勺薄盐蚝油、足量胡椒粉，翻炒30秒断生即成！',
+        durationSeconds: 90
+      }
+    ]
+  },
+  {
+    id: 'dinner_congee_millet_pepper_egg',
+    title: '【小米粥+炒菜】金黄米油纯小米粥 + 猛火薄皮椒炒鸡蛋',
+    subtitle: '你最爱的“简单纯粥+快手热炒” · 1碗养胃黄小米粥配1盘焦香青椒炒蛋',
+    slot: 'dinner',
+    stapleType: 'congee',
+    prepMinutes: 3,
+    cookMinutes: 15,
+    calories: 410,
+    proteinGrams: 20,
+    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'salt', 'chili_sauce'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '黄金晚饭搭档：零调味纯香小米粥 + 锅边生抽薄盐蚝油爆炒《薄皮椒炒富硒蛋》',
+    soloPortionNote: '小米比大米更容易煮熟！水开下小米滴2滴橄榄油煮15分钟即出浓稠金黄米油；盛出后再用炒锅花2分钟炒盘青椒鸡蛋，简单纯粹！',
+    steps: [
+      {
+        id: 'd_cm1_1',
+        phase: 'wok',
+        deviceLabel: '熬小米粥',
+        title: '水开下入半小碗黄小米(约50g)，滴2滴油中小火熬15分钟盛出',
+        detail: '锅中烧开600ml水，水沸后下淘洗一遍的黄小米（切勿冷水下锅以防粘底），滴2滴橄榄油，转中小火半盖锅盖煮15分钟至金黄浓稠，盛入大碗。',
+        durationSeconds: 900,
+        parallelTip: '熬粥期间顺手把3根薄皮椒切块、打散2颗盒马谷物蛋。'
+      },
+      {
+        id: 'd_cm1_2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '炒锅冲净擦干，先干煸薄皮椒块至表皮微焦起虎皮',
+        detail: '热锅下少许油，放入拍蒜和3根薄皮椒块，大火翻炒60秒至青椒表皮起焦斑、辣香四溢。',
+        durationSeconds: 75
+      },
+      {
+        id: 'd_cm1_3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '淋入2颗鸡蛋液包裹青椒，沿锅边烹入生抽蚝油出锅',
+        detail: '直接把打散的2颗蛋液淋在青椒上，待底部定型后大块翻炒，沿锅边淋1勺生抽、半勺薄盐蚝油翻匀出锅！配热乎小米粥绝配！',
+        durationSeconds: 75
+      }
+    ]
+  },
+  {
+    id: 'dinner_wok_soup',
+    title: '【小米粥+炒菜】暖胃纯小米粥 + 40秒蒜蓉蚝油油麦菜 & 辣酱荷包蛋',
+    subtitle: '1碗金黄小米粥 + 1盘翠绿蒜蓉青菜 + 1颗流心辣酱煎蛋 · 清爽助眠',
+    slot: 'dinner',
+    stapleType: 'congee',
+    prepMinutes: 3,
+    cookMinutes: 15,
+    calories: 380,
+    proteinGrams: 18,
+    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'chili_sauce', 'salt'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '纯香小米粥 + 猛火蒜蓉薄盐蚝油油麦菜(250g) + 生抽辣椒酱煎荷包蛋',
+    soloPortionNote: '完全按你“简单粥+炒菜”的喜好设计：粥里不放乱七八糟的料，纯粹喝米香；配菜40秒大火快炒半袋油麦菜，清脆爽口！',
+    steps: [
+      {
+        id: 'd2_s1',
+        phase: 'wok',
+        deviceLabel: '熬小米粥',
+        title: '水沸下黄小米（或小米+大米二米）熬15分钟至浓稠盛出',
+        detail: '600ml开水下入50g黄小米，中小火熬煮15分钟至米油浮面，盛入大粥碗晾至微温适口。',
+        durationSeconds: 900
+      },
+      {
+        id: 'd2_s2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '原锅擦干煎1颗焦边荷包蛋，淋半勺生抽与辣椒酱装盘',
+        detail: '炒锅倒少许油，煎1颗外焦里嫩的荷包蛋，淋半勺生抽和半勺辣椒酱盛出做佐粥硬菜。',
+        durationSeconds: 90
+      },
+      {
+        id: 'd2_s3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '下蒜末爆香，大火40秒快炒250g蚝油油麦菜',
+        detail: '锅底下3瓣蒜末爆香，倒入半袋油麦菜（250g）大火翻炒30秒至断生翠绿，挤入1勺薄盐蚝油翻匀出锅，一粥两菜舒舒服服！',
+        durationSeconds: 60
+      }
+    ]
+  },
+  {
+    id: 'dinner_congee_millet_tofu_meat',
+    title: '【小米粥+炒菜】大米小米二米粥 + 葱烧蚝油老豆腐滑肉片',
+    subtitle: '小米+大米同煮更绵绸 · 配一盘咸香下粥的葱烧老豆腐炒肉片',
+    slot: 'dinner',
+    stapleType: 'congee',
+    prepMinutes: 4,
+    cookMinutes: 15,
+    calories: 445,
+    proteinGrams: 29,
+    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
+    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
+    existingCondimentIds: ['olive_oil', 'light_soy', 'chili_sauce', 'pepper', 'salt'],
+    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
+    flavorFormula: '绵滑二米粥（黄小米30g+大米20g） + 葱烧豆腐汁（薄盐蚝油1勺+生抽1勺+玉米淀粉半勺）',
+    soloPortionNote: '黄小米里掺一点大米（或中午剩的2勺熟米饭）一起煮，米汤会比纯小米粥更粘稠顺滑；配一盘葱烧老豆腐，营养满分！',
+    steps: [
+      {
+        id: 'd_cm3_1',
+        phase: 'wok',
+        deviceLabel: '熬二米粥',
+        title: '黄小米+少许大米(或熟米饭)下沸水锅熬12–15分钟盛出',
+        detail: '沸水下入黄小米与少许大米（或2勺中午剩饭加速浓稠），滴2滴油熬至米粒开花浓稠盛出。',
+        durationSeconds: 800
+      },
+      {
+        id: 'd_cm3_2',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '炒锅煎香半盒老豆腐片(190g)，下淀粉肉片与大葱段滑炒',
+        detail: '炒锅下少许油将老豆腐片煎至两面金黄，拨到一旁下入80g淀粉抓浆的肉片（或鸡腿片）和大葱斜段爆香。',
+        durationSeconds: 180
+      },
+      {
+        id: 'd_cm3_3',
+        phase: 'wok',
+        deviceLabel: '燃气灶+炒锅',
+        title: '淋入生抽薄盐蚝油与少许水淀粉收汁装盘，配二米粥开吃',
+        detail: '加入1勺生抽、1勺薄盐蚝油、少许胡椒粉和4勺清水咕嘟1分钟，收汁装盘，一口热乎二米粥配一口咸香葱烧豆腐！',
+        durationSeconds: 90
+      }
+    ]
+  },
   {
     id: 'dinner_noodle_tofu_greens',
     title: '【晚间汤面】奶白煎蛋老豆腐小白菜热汤龙须面',
-    subtitle: '今日晚餐极力推荐 · 1次消耗半盒老豆腐+150g小白菜 · 暖胃易消化',
+    subtitle: '10分钟一锅出 · 1次消耗半盒老豆腐+150g小白菜 · 暖胃易消化',
     slot: 'dinner',
     stapleType: 'noodles',
     prepMinutes: 3,
@@ -805,136 +1064,6 @@ export const SOLO_RECIPES: Recipe[] = [
         durationSeconds: 60
       }
     ]
-  },
-  {
-    id: 'dinner_congee_meat_greens',
-    title: '【晚间喝粥】广式生滚姜丝滑肉片小白菜咸香粥（炒锅10分钟速成）',
-    subtitle: '用中午多焖的半碗米饭(或冷冻米) · 炒锅10分钟熬出绵密酒楼级生滚粥',
-    slot: 'dinner',
-    stapleType: 'congee',
-    prepMinutes: 3,
-    cookMinutes: 10,
-    calories: 380,
-    proteinGrams: 27,
-    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
-    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
-    existingCondimentIds: ['olive_oil', 'light_soy', 'pepper', 'salt'],
-    requiredAdditionIds: ['tofu_chicken_greens'],
-    flavorFormula: '生滚咸粥定味：姜丝去腥 + 玉米淀粉滑肉片 + 薄盐蚝油半勺 + 盐半小勺 + 胡椒粉 + 橄榄油3滴',
-    soloPortionNote: '独居喝粥秘诀：中午焖米饭时多焖半碗！晚上把熟米饭倒进炒锅加4倍开水，8分钟就能熬出米油浓稠的广式生滚粥！',
-    steps: [
-      {
-        id: 'd_cg_1',
-        phase: 'prep',
-        deviceLabel: '菜刀切配',
-        title: '肉片加姜丝淀粉抓匀，小白菜切细丝',
-        detail: '瘦肉或去皮鸡腿肉100g切薄片，加姜丝、半勺生抽、半勺薄盐蚝油、1小勺玉米淀粉和几滴油抓匀；小白菜150g切细丝。',
-        durationSeconds: 150
-      },
-      {
-        id: 'd_cg_2',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '炒锅倒入半碗熟米饭(或泡软生米)+600ml开水，大火煮开花',
-        detail: '炒锅倒入中午预留的半碗熟米饭（若是生米需提前加几滴油拌匀冷冻1小时），冲入600ml开水，中大火煮6–8分钟并用勺背轻轻按压，瞬间浓稠出米油！',
-        durationSeconds: 420,
-        parallelTip: '煮粥时滴3滴橄榄油，不仅米香浓郁，而且绝不溢锅！'
-      },
-      {
-        id: 'd_cg_3',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '下入滑肉片与小白菜丝滚煮90秒，撒胡椒粉出锅',
-        detail: '保持粥底滚沸，分散下入淀粉肉片，用筷子拨散煮60秒至变色，再撒入小白菜丝、少许盐和足量白胡椒粉，滚30秒即成暖胃生滚粥！',
-        durationSeconds: 90
-      }
-    ]
-  },
-  {
-    id: 'dinner_congee_egg_tofu',
-    title: '【晚间喝粥】黄金蛋花老豆腐丁暖胃咸粥 + 空气炸锅虎皮青椒',
-    subtitle: '双锅神仙晚粥 · 炒锅熬滑嫩豆腐蛋花粥 + 空气炸锅无油烟烤薄皮椒小菜',
-    slot: 'dinner',
-    stapleType: 'congee',
-    prepMinutes: 3,
-    cookMinutes: 10,
-    calories: 390,
-    proteinGrams: 23,
-    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
-    coreEquipmentIds: ['gas_stove', 'wok', 'air_fryer', 'knife'],
-    existingCondimentIds: ['olive_oil', 'light_soy', 'vinaigrette', 'chili_sauce', 'pepper', 'salt'],
-    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
-    flavorFormula: '咸粥提鲜（薄盐蚝油半勺+胡椒粉+葱花） + 佐粥小菜（烤薄皮椒淋生抽+油醋汁+蒜末）',
-    soloPortionNote: '喝粥最怕没味道！空气炸锅8分钟烤2根薄皮椒，撕成条拌蒜末生抽油醋汁，配热腾腾的豆腐蛋花粥绝了！',
-    steps: [
-      {
-        id: 'd_ce_1',
-        phase: 'air_fryer',
-        deviceLabel: '空气炸锅',
-        title: '薄皮椒3根刷3滴油，空气炸锅200°C烤8分钟做佐粥虎皮椒',
-        detail: '薄皮椒3根洗净擦干表面刷几滴油，推入空气炸锅200°C烤8分钟至表皮起虎皮焦斑，取出撕成条，淋半勺生抽、半勺油醋汁和蒜末拌匀。',
-        durationSeconds: 480
-      },
-      {
-        id: 'd_ce_2',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '炒锅煮滚米粥底，下入老豆腐小丁(150g)同煮5分钟',
-        detail: '炒锅用半碗剩米饭（或生米）加开水煮至软烂浓稠，放入切成1cm小丁的老豆腐和少许姜末同煮5分钟。',
-        durationSeconds: 300
-      },
-      {
-        id: 'd_ce_3',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '淋入谷物蛋液推成金丝蛋花，加蚝油葱花胡椒出锅',
-        detail: '转小火淋入1–2颗打散的鸡蛋液，用筷子轻轻推成云朵蛋花，加半勺薄盐蚝油、少许盐、葱花和胡椒粉，配虎皮青椒开喝！',
-        durationSeconds: 60
-      }
-    ]
-  },
-  {
-    id: 'dinner_wok_soup',
-    title: '【晚间喝粥】快手浓稠白粥 + 蒜蓉蚝油油麦菜 & 辣酱荷包蛋',
-    subtitle: '最治愈的潮汕式“白粥配杂咸” · 10分钟清爽刮油、洗碗只需1分钟',
-    slot: 'dinner',
-    stapleType: 'congee',
-    prepMinutes: 3,
-    cookMinutes: 9,
-    calories: 370,
-    proteinGrams: 17,
-    imageUrl: '/src/assets/images/air_fryer_dinner_1793918770202.jpg',
-    coreEquipmentIds: ['gas_stove', 'wok', 'knife'],
-    existingCondimentIds: ['olive_oil', 'light_soy', 'chili_sauce', 'salt'],
-    requiredAdditionIds: ['eggs_bread_noodles', 'tofu_chicken_greens'],
-    flavorFormula: '清甜白粥底 + 猛火蒜蓉薄盐蚝油油麦菜(250g) + 生抽辣椒酱煎荷包蛋',
-    soloPortionNote: '这顿晚饭一次性帮你消灭半袋盒马油麦菜（250g）！热白粥配脆嫩蚝油青菜和流心辣酱煎蛋，肠胃零负担。',
-    steps: [
-      {
-        id: 'd2_s1',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '先用炒锅把半碗米饭+开水熬成8分钟稠白粥盛出',
-        detail: '炒锅放入半碗米饭与500ml开水，中火熬煮7–8分钟至米粒开花、汤汁浓白，盛入大粥碗保温。',
-        durationSeconds: 450
-      },
-      {
-        id: 'd2_s2',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '原锅冲净擦干，煎1颗焦边荷包蛋淋半勺生抽与辣椒酱',
-        detail: '炒锅倒少许油，煎1颗外焦里嫩的荷包蛋，淋半勺生抽和半勺辣椒酱盛出做佐粥硬菜。',
-        durationSeconds: 120
-      },
-      {
-        id: 'd2_s3',
-        phase: 'wok',
-        deviceLabel: '燃气灶+炒锅',
-        title: '下蒜末爆香，大火40秒快炒250g蚝油油麦菜',
-        detail: '锅底下3瓣蒜末爆香，倒入半袋油麦菜（250g）大火翻炒30秒至断生翠绿，挤入1勺薄盐蚝油翻匀出锅，一粥两菜齐活！',
-        durationSeconds: 60
-      }
-    ]
   }
 ];
 
@@ -946,43 +1075,43 @@ export const INITIAL_WEEKLY_PLAN: DayPlan[] = [
     breakfastId: 'bf_today_1',
     lunchId: 'lunch_wok_chicken',
     dinnerId: 'dinner_noodle_tofu_greens',
-    batchPrepNote: '早饭煮龙须面烫100g小白菜；中午买肉和油回来焖2份米饭（1份中午做薄皮椒滑鸡腿盖饭，1份留明天煮粥）；晚上用半盒老豆腐+剩余200g小白菜煮奶白煎蛋汤面（小白菜清零！）。'
+    batchPrepNote: '早饭煮龙须面烫100g小白菜；中午买肉、油、大米和黄小米回来，焖2份米饭（1份中午做薄皮椒滑鸡腿盖饭，1份冷藏留明晚做蛋炒饭）；今晚用半盒老豆腐+200g小白菜煮奶白煎蛋汤面（小白菜清零！）。'
   },
   {
     dayIndex: 2,
     dayName: '周二',
-    focusLabel: '午间拌面 · 晚间生滚粥',
+    focusLabel: '午间拌面 · 晚间猛火炒饭',
     breakfastId: 'bf_today_2',
     lunchId: 'lunch_biang_noodles',
-    dinnerId: 'dinner_congee_meat_greens',
-    batchPrepNote: '早饭空气炸锅烤鲜奶吐司太阳蛋；中午用剩下半盒老豆腐烤脆哨配油醋辣拌面（老豆腐清零！）；晚上用昨天预留的半碗米饭10分钟煮《姜丝滑肉片青菜咸粥》。'
+    dinnerId: 'dinner_fried_rice_golden_egg',
+    batchPrepNote: '早饭空气炸锅烤鲜奶吐司太阳蛋；中午用剩下半盒老豆腐烤脆哨配油醋辣拌面（老豆腐清零！）；晚上把昨天冷藏的1碗米饭拿出来，5分钟猛火炒《锅边酱油辣椒酱黄金葱花蛋炒饭》。'
   },
   {
     dayIndex: 3,
     dayName: '周三',
-    focusLabel: '午间双拼饭 · 晚间白粥青菜',
+    focusLabel: '午间双拼饭 · 晚间小米粥+炒菜',
     breakfastId: 'bf_today_3',
     lunchId: 'lunch_rice_tiger_pepper_egg',
     dinnerId: 'dinner_wok_soup',
-    batchPrepNote: '今天集中消灭500g油麦菜！中午做《虎皮薄皮椒荷包蛋+250g蒜蓉蚝油油麦菜盖饭》；晚上煮一碗热白粥配剩下250g蚝油油麦菜（油麦菜清零！）。'
+    batchPrepNote: '今天集中消灭500g油麦菜！中午做《虎皮薄皮椒荷包蛋+250g蒜蓉蚝油油麦菜饭》；晚上熬一碗纯粹金黄的《黄小米粥》，配40秒快炒的剩下250g《蒜蓉蚝油油麦菜 & 辣酱煎蛋》（油麦菜清零！）。'
   },
   {
     dayIndex: 4,
     dayName: '周四',
-    focusLabel: '午间肉丝面 · 晚间蛋花粥',
+    focusLabel: '午间肉丝面 · 晚间小米粥+炒菜',
     breakfastId: 'bf_today_1',
     lunchId: 'lunch_noodle_pepper_meat',
-    dinnerId: 'dinner_congee_egg_tofu',
-    batchPrepNote: '中午用解冻的第二份肉丝+薄皮椒现炒浇头拌龙须面；晚上熬金丝蛋花粥，配空气炸锅无油烟烤虎皮青椒。'
+    dinnerId: 'dinner_congee_millet_pepper_egg',
+    batchPrepNote: '中午用解冻的第二份肉丝+薄皮椒现炒浇头拌龙须面；晚上熬《金黄米油纯小米粥》，配一盘2分钟猛火快炒的《薄皮椒炒谷物蛋》。'
   },
   {
     dayIndex: 5,
     dayName: '周五',
-    focusLabel: '午间红烧饭 · 晚间清汤面',
+    focusLabel: '午间红烧饭 · 晚间鸡丁炒饭',
     breakfastId: 'bf_today_2',
     lunchId: 'lunch_rice_pork_tofu',
-    dinnerId: 'dinner_noodle_velvet_meat',
-    batchPrepNote: '中午用最后一份肉做浓汁滑肉盖饭；周五晚间煮一碗清爽的生姜胡椒滑肉片清汤龙须面，舒舒服服迎接周末。'
+    dinnerId: 'dinner_fried_rice_pepper_chicken',
+    batchPrepNote: '中午焖2份米饭吃1份红烧滑肉饭；周五晚间用剩下的冷米饭+鸡腿丁+最后2根薄皮椒做《薄皮椒蚝油鸡丁猛火炒饭》，香喷喷开启周末！'
   }
 ];
 

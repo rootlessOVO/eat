@@ -174,10 +174,10 @@ export const HemaOrderActionSection: React.FC<HemaOrderActionSectionProps> = ({
                 </div>
                 <div className="pt-2 border-t border-amber-100">
                   <div className="font-bold text-stone-900">
-                    3. 主食补齐（针对你中午米饭/面条、晚上喝粥/面条）：顺手买 1kg–2.5kg 小袋大米
+                    3. 主食补齐（针对中午米饭、晚上炒饭/小米粥）：顺手买小袋「大米 + 黄小米」
                   </div>
                   <p className="text-stone-600 leading-relaxed mt-0.5">
-                    你已有1600g龙须挂面；若家里还没大米，中午顺手提一袋<strong>1kg–2.5kg真空小包装丝苗米或东北大米</strong>（或盒马微波米饭）。<strong>一米两吃秘诀：</strong>中午焖2人份米饭，1份中午吃盖浇饭，留半碗熟米饭晚上倒进炒锅加开水，<strong>8分钟就能熬出浓稠生滚咸粥</strong>！
+                    顺手提一袋<strong>1kg–2.5kg大米</strong> + 一小袋<strong>400g–1kg黄小米（约¥6–¥12）</strong>。<strong>一米两吃秘诀：</strong>中午焖2人份米饭，1份中午吃盖浇饭，另1份摊平放冰箱冷藏收干水汽，晚上拿出来<strong>5分钟就能炒出粒粒分明的黄金蛋炒饭</strong>；想喝粥时水开下黄小米15分钟熬出金黄米油，原锅再花2分钟炒盘青椒鸡蛋或蚝油油麦菜！
                   </p>
                 </div>
               </div>

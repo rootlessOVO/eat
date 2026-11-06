@@ -80,20 +80,23 @@ test('HEMA_PURCHASED_ITEMS has exact 10 items from order and applyHemaPurchaseTo
   assert.equal(summary.readinessPercentage, 100);
 });
 
-test('SOLO_RECIPES includes 6 lunch schemes (3 rice + 3 noodles) and 6 dinner schemes (3 noodles + 3 congee)', () => {
+test('SOLO_RECIPES includes 6 lunch schemes (3 rice + 3 noodles) and 9 dinner schemes (3 fried_rice + 3 congee + 3 noodles)', () => {
   const lunchRecipes = SOLO_RECIPES.filter((r) => r.slot === 'lunch');
   const dinnerRecipes = SOLO_RECIPES.filter((r) => r.slot === 'dinner');
   assert.equal(lunchRecipes.length, 6);
-  assert.equal(dinnerRecipes.length, 6);
+  assert.equal(dinnerRecipes.length, 9);
 
   const lunchRice = lunchRecipes.filter((r) => r.stapleType === 'rice');
   const lunchNoodles = lunchRecipes.filter((r) => r.stapleType === 'noodles');
   assert.equal(lunchRice.length, 3);
   assert.equal(lunchNoodles.length, 3);
 
+  const dinnerFriedRice = dinnerRecipes.filter((r) => r.stapleType === 'fried_rice');
   const dinnerNoodles = dinnerRecipes.filter((r) => r.stapleType === 'noodles');
   const dinnerCongee = dinnerRecipes.filter((r) => r.stapleType === 'congee');
+  assert.equal(dinnerFriedRice.length, 3);
   assert.equal(dinnerNoodles.length, 3);
   assert.equal(dinnerCongee.length, 3);
 });
+
 

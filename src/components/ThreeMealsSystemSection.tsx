@@ -40,10 +40,12 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
     const stapleTag =
       staple === 'rice'
         ? '米饭盖饭'
+        : staple === 'fried_rice'
+        ? '猛火炒饭'
         : staple === 'noodles'
         ? '面条方案'
         : staple === 'congee'
-        ? '暖胃咸粥'
+        ? '小米粥+炒菜'
         : '快手吐司/蛋';
     if (slot === 'breakfast') return `早餐 · ${stapleTag}`;
     if (slot === 'lunch') return `午餐 · ${stapleTag}`;
@@ -58,16 +60,16 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
     >
       <div className="max-w-3xl mb-8">
         <p className="text-xs font-medium text-amber-800 tracking-wide mb-2">
-          02. 早·中·晚长期中式饮食法则（已定制：午间米饭/面条 · 晚间汤面/喝粥）
+          02. 早·中·晚长期中式饮食法则（已定制：午间米饭/面条 · 晚间炒饭/小米粥+炒菜/汤面）
         </p>
         <h2
           id="meals-heading"
           className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight"
         >
-          15套实战菜谱库：午餐6套（3米饭+3面条）· 晚餐6套（3汤面+3咸粥）
+          18套实战菜谱库：午餐6套（3盖饭+3面）· 晚餐9套（3炒饭+3小米粥配菜+3汤面）
         </h2>
         <p className="text-sm text-stone-600 mt-2 leading-relaxed">
-          完全按照你的主食习惯与刚买的盒马10件食材定制：<strong>中午吃得扎实解馋</strong>（浓汁盖浇饭或干拌/现炒码子面），<strong>晚上吃得温润暖胃</strong>（10分钟清甜汤面或广式生滚咸粥），实现“一米两吃、一锅到底、零剩菜”。
+          完全贴合你的口味升级：<strong>中午焖2份米饭</strong>（1份中午做浓汁盖浇饭，1份放冰箱冷藏收干水汽，<strong>晚上5分钟猛火做街头风味蛋炒饭/肉丁炒饭</strong>）；想喝粥时熬一碗<strong>纯粹金黄的小米粥/二米粥，配1盘2分钟快炒青菜或青椒炒蛋</strong>！
         </p>
       </div>
 
@@ -96,7 +98,7 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
             浓汁盖浇米饭 / 现炒浇头干拌龙须面
           </h3>
           <p className="text-xs text-stone-600 leading-relaxed mb-4">
-            中午吃米饭时<strong>一次焖2人份</strong>（吃1份留半碗晚上煮粥）！用<strong>玉米淀粉+薄盐蚝油+生抽</strong>将鸡腿肉/猪肉滑炒薄皮椒或老豆腐，浓汁拌饭或拌面，只洗一只碗。
+            中午吃米饭时<strong>一次焖2人份</strong>（吃1份，另1份摊平冷藏留晚上做炒饭）！用<strong>玉米淀粉+薄盐蚝油+生抽</strong>将鸡腿肉/猪肉滑炒薄皮椒或老豆腐，浓汁拌饭或拌面。
           </p>
           <div className="text-xs text-stone-500 pt-3 border-t border-stone-100">
             米饭3款：薄皮椒滑鸡腿饭 · 老豆腐红烧滑肉饭 · 虎皮椒荷包蛋饭
@@ -107,38 +109,38 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
 
         <div className="bg-white border border-stone-200 rounded-xl p-6">
           <div className="text-xs font-semibold text-amber-800 mb-1">
-            晚餐长期公式（6套方案 · 3款汤面 + 3款咸粥）
+            晚餐长期公式（9套方案 · 3炒饭 + 3小米粥配菜 + 3汤面）
           </div>
           <h3 className="text-lg font-bold text-stone-900 mb-2">
-            清甜暖胃汤面 / 炒锅10分钟生滚咸粥
+            猛火蛋炒饭 / 纯小米粥+快炒菜 / 暖胃汤面
           </h3>
           <p className="text-xs text-stone-600 leading-relaxed mb-4">
-            晚上肠胃宜温热好消化。想吃面就煮<strong>奶白煎蛋豆腐小白菜汤面</strong>或<strong>姜丝胡椒滑肉片汤面</strong>；想喝粥就把中午留的半碗熟米饭倒进炒锅加开水，10分钟熬出<strong>生滚肉片/蛋花咸粥</strong>！
+            中午有剩饭就花5分钟做<strong>锅边酱油葱花蛋炒饭 / 薄皮椒鸡丁炒饭</strong>；想喝粥就煮<strong>纯香黄小米粥 + 1盘薄皮椒炒蛋或蒜蓉蚝油油麦菜</strong>；想吃面就煮10分钟清汤面。
           </p>
           <div className="text-xs text-stone-500 pt-3 border-t border-stone-100">
-            汤面3款：奶白煎蛋老豆腐汤面 · 姜丝胡椒滑肉片面 · 酸辣云朵蛋花面
+            炒饭3款：锅边酱油葱花蛋炒饭 · 薄皮椒鸡丁炒饭 · 黄金老豆腐碎炒饭
             <br />
-            喝粥3款：生滚姜丝滑肉片青菜粥 · 黄金蛋花豆腐粥 · 白粥配蚝油油麦菜
+            小米粥+菜3款：纯小米粥+薄皮椒炒蛋 / 蒜蓉油麦菜 / 葱烧老豆腐
           </div>
         </div>
       </div>
 
-      {/* Special Guide: How to Cook Rice & 10-Min Congee with Existing Wok */}
+      {/* Special Guide: Wok Fried Rice & Golden Millet Porridge */}
       <div className="bg-amber-50/50 border border-amber-200/90 rounded-xl p-5 mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <div className="text-xs font-bold text-amber-900 mb-1">
-            实用技巧 A · 还没买电饭煲，今天中午怎么用「炒锅」焖米饭？
+            实用技巧 A · 怎么用你的「燃气灶+炒锅」炒出粒粒分明、不粘锅的晚间炒饭？
           </div>
           <p className="text-xs text-stone-700 leading-relaxed">
-            大米淘洗后按<strong>「1碗米 : 1.3碗水」</strong>放入炒锅（或放进大瓷碗摆在炒锅加水上蒸20分钟）。若直接锅焖：滴3滴油防粘，大火烧开转<strong>最小火（中心火苗）加锅盖焖12分钟</strong>，关火再虚焖5分钟，粒粒分明还有锅巴香！
+            <strong>核心1（冷饭收水）：</strong>中午多焖出的1碗米饭千万别捂在锅里！趁热盛盘摊平，放冰箱冷藏4小时收干表面水分。<strong>核心2（锅边生抽）：</strong>大火把鸡蛋和米饭炒散后，<strong>生抽千万别直接浇在白饭上</strong>，一定要沿着滚烫的炒锅边缘淋一圈，瞬间激出焦香锅气！
           </p>
         </div>
         <div className="md:border-l md:border-amber-200/80 md:pl-6">
           <div className="text-xs font-bold text-amber-900 mb-1">
-            实用技巧 B · 晚上不想等40分钟，怎么用「炒锅」10分钟煮出浓稠好粥？
+            实用技巧 B · 15分钟熬出浓稠金黄「小米粥」+ 2分钟快炒小菜流程
           </div>
           <p className="text-xs text-stone-700 leading-relaxed">
-            <strong>秘诀1（熟饭生滚法）：</strong>中午焖饭多焖半碗，晚上倒进炒锅加4碗开水大火煮6分钟，用勺背按压几下立刻出米油！<strong>秘诀2（冷冻破壁法）：</strong>生米洗净拌3滴油放冷冻室冻1小时以上，晚上直接下开水锅煮10分钟即开花绵密！
+            <strong>先熬粥再炒菜（只用1口锅）：</strong>炒锅烧开600ml水，<strong>水沸后再下50g黄小米</strong>（防粘锅底），滴2滴橄榄油，中小火熬15分钟即出厚厚一层金黄米油（掺一小把大米同煮成“二米粥”更绵滑）。把小米粥盛进大碗保温，炒锅冲一下擦干，<strong>2分钟大火炒盘薄皮椒炒鸡蛋或蚝油油麦菜</strong>即可开饭！
           </p>
         </div>
       </div>
@@ -154,8 +156,8 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
             {[
               { id: 'all', label: `全部三餐 (${recipes.length})` },
               { id: 'breakfast', label: '早餐 (3)' },
-              { id: 'lunch', label: '午餐 · 饭/面 (6)' },
-              { id: 'dinner', label: '晚餐 · 面/粥 (6)' }
+              { id: 'lunch', label: '午餐 · 盖饭/面 (6)' },
+              { id: 'dinner', label: '晚餐 · 炒饭/粥/面 (9)' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -179,9 +181,10 @@ export const ThreeMealsSystemSection: React.FC<ThreeMealsSystemSectionProps> = (
           >
             {[
               { id: 'all', label: '全部主食' },
-              { id: 'rice', label: '只看米饭盖饭 (3)' },
-              { id: 'noodles', label: '只看面条 (7)' },
-              { id: 'congee', label: '只看晚间喝粥 (3)' }
+              { id: 'rice', label: '米饭盖饭 (3)' },
+              { id: 'fried_rice', label: '晚间炒饭 (3)' },
+              { id: 'congee', label: '小米粥+炒菜 (3)' },
+              { id: 'noodles', label: '面条 (7)' }
             ].map((st) => (
               <button
                 key={st.id}
